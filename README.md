@@ -20,3 +20,4 @@ python3.11 –version
 pip3.11 --version
 python3.11 -m pip install --user ansible-core==2.14.0
 /home/admin/.local/lib/python3.11/site-packages/ansible
+
