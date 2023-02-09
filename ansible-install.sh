@@ -24,9 +24,27 @@ sudo make altinstall
 wait
 #python3.11 –version
 #pip3.11 --version
+echo 'export PATH=/usr/local/bin:$PATH' >>~/.bash_profile
 adduser admin
 echo admin | sudo passwd admin --stdin
 sudo usermod -aG wheel admin
 sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 python3.11 -m pip install --user ansible-core==2.14.0
+
+cd /root/
+mkdir ansible
+mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/groupvars ansible/inventory/hostvars
+cd /ansible/
+cat << EOF | sudo tee ansible.cfg
+[defaults]
+inventory = ./inventory
+collections_path = ./collections
+roles_path = ./roles
+retry_files_enabled = False
+host_key_checking = False
+interpreter_python = python3
+EOF
+
+
+
 
