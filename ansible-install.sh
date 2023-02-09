@@ -30,7 +30,7 @@ adduser admin
 echo admin | sudo passwd admin --stdin
 sudo usermod -aG wheel admin
 sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
-su - admin -c 'python3.11 -m pip install --user ansible-core==2.14.0'
+su - admin -c 'python3.11 -m pip install --user ansible-core==2.14.2'
 wait
 cd /home/admin/
 mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/group_vars ansible/inventory/host_vars
