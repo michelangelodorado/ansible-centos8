@@ -20,6 +20,7 @@ tar xvf Python-3.11.0.tgz
 wait
 cd Python-3.11.0
 ./configure --enable-optimizations
+wait
 sudo make altinstall
 wait
 #python3.11 –version
@@ -32,9 +33,8 @@ sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 python3.11 -m pip install --user ansible-core==2.14.0
 wait
 cd /root/
-mkdir ansible
-mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/groupvars ansible/inventory/hostvars
-cd /ansible/
+mkdir -p opt/ansible/files opt/ansible/collections opt/ansible/playbooks opt/ansible/roles opt/ansible/scripts opt/ansible/templates opt/ansible/inventory/groupvars opt/ansible/inventory/hostvars
+cd /root/opt/ansible/
 cat << EOF | sudo tee ansible.cfg
 [defaults]
 inventory = ./inventory
