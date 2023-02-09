@@ -33,7 +33,7 @@ sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 su - admin -c 'python3.11 -m pip install --user ansible-core==2.14.0'
 wait
 cd /home/admin/
-mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/groupvars ansible/inventory/hostvars
+mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/group_vars ansible/inventory/host_vars
 cd /home/admin/ansible/
 cat << EOF | sudo tee ansible.cfg
 [defaults]
