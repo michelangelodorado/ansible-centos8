@@ -30,7 +30,7 @@ echo admin | sudo passwd admin --stdin
 sudo usermod -aG wheel admin
 sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 python3.11 -m pip install --user ansible-core==2.14.0
-
+wait
 cd /root/
 mkdir ansible
 mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/groupvars ansible/inventory/hostvars
