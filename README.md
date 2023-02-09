@@ -1,5 +1,5 @@
 # ansible-centos8
-A script to deploy ansible-core along with pre-requisites in centos 8 
+A script to deploy ansible-core along with the pre-requisites in centos 8 
 
 This script will install the following:
 
