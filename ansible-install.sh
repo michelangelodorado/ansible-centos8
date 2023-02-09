@@ -44,6 +44,7 @@ retry_files_enabled = False
 host_key_checking = False
 interpreter_python = python3
 EOF
+cd /home/admin
 su admin
 
 
