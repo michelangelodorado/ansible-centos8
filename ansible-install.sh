@@ -32,9 +32,9 @@ sudo usermod -aG wheel admin
 sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 su - admin -c 'python3.11 -m pip install --user ansible-core==2.14.0'
 wait
-cd /root/
+cd /home/admin/
 mkdir -p opt/ansible/files opt/ansible/collections opt/ansible/playbooks opt/ansible/roles opt/ansible/scripts opt/ansible/templates opt/ansible/inventory/groupvars opt/ansible/inventory/hostvars
-cd /root/opt/ansible/
+cd /home/admin/opt/ansible/
 cat << EOF | sudo tee ansible.cfg
 [defaults]
 inventory = ./inventory
