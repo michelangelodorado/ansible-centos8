@@ -25,6 +25,7 @@ sudo make altinstall
 wait
 #python3.11 –version
 #pip3.11 --version
+ln -s /usr/bin/python3.11 /usr/bin/python
 echo 'export PATH=/usr/local/bin:$PATH' >>~/.bash_profile
 adduser admin
 echo admin | sudo passwd admin --stdin
