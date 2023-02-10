@@ -34,6 +34,7 @@ su - admin -c 'python3.11 -m pip install --user ansible-core==2.14.2'
 wait
 cd /home/admin/
 mkdir -p ansible/files ansible/collections ansible/playbooks ansible/roles ansible/scripts ansible/templates ansible/inventory/group_vars ansible/inventory/host_vars
+chown -R admin:admin ansible
 cd /home/admin/ansible/
 cat << EOF | sudo tee ansible.cfg
 [defaults]
@@ -42,8 +43,9 @@ collections_path = ./collections
 roles_path = ./roles
 retry_files_enabled = False
 host_key_checking = False
-interpreter_python = python3
+interpreter_python = python3.11
 EOF
+chown -R admin:admin ansible.cfg
 cd /home/admin
 su admin
 
